@@ -32,8 +32,15 @@ class TaskController extends AbstractController
             /*$task=new Task();
             $form = $this->createForm(TaskType::class,$task);
             return $this->render('task/new.html.twig',['form'=>$form->createView()]);*/
+            $entitymanager=$this->getDoctrine()->getManager();
+            $entitymanager->persist($task);
+            $entitymanager->flush();
         }
         //return new Response($form);
-        return $this->render('task/new.html.twig',['form'=>$form->createView()]);
+        $repository=$this->getDoctrine()->getRepository(Task::class);
+        $tasks=$repository->findAll();
+        $task=new Task();
+        $form = $this->createForm(TaskType::class,$task);
+        return $this->render('task/new.html.twig',['form'=>$form->createView(),'task'=>$tasks]);
     }
 }

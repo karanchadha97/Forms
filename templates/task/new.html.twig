@@ -1,1 +1,12 @@
+{{'Task'}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{'Due Date'}}
+<ul>
+{%for i in task%}
+
+<li>
+{{i.task}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{i.dueDate}}
+
+</li>
+
+{% endfor %}
+</ul>
 {{form(form)}}
