@@ -81,6 +81,9 @@
     "egulias/email-validator": {
         "version": "2.1.25"
     },
+    "fabpot/goutte": {
+        "version": "v4.0.1"
+    },
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.3"
     },
